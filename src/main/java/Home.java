@@ -19,7 +19,7 @@ public class Home extends HttpServlet {
         LanguageParse languageParse = new LanguageParse();
         List list = languageParse.getDetail(language);
         req.setAttribute("languageList", list);
-        req.setAttribute("email",getServletConfig().getInitParameter("email"));
+        req.setAttribute("email", getServletContext().getInitParameter("email"));
 
         //请求分派器用来分派
         RequestDispatcher view = req.getRequestDispatcher("WEB-INF/result.jsp");
