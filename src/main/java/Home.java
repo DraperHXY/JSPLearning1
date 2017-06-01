@@ -1,4 +1,5 @@
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -10,7 +11,7 @@ public class Home extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        doPost(req,resp);
+        doPost(req, resp);
     }
 
     @Override
@@ -18,9 +19,34 @@ public class Home extends HttpServlet {
         String language = req.getParameter("language");
         LanguageParse languageParse = new LanguageParse();
         List list = languageParse.getDetail(language);
-        req.setAttribute("languageList",list);
+        req.setAttribute("languageList", list);
 
-        RequestDispatcher view = req.getRequestDispatcher("result.jsp");
-        view.forward(req,resp);
+        //请求分派器用来分派
+        RequestDispatcher view = req.getRequestDispatcher("WEB-INF/result.jsp");
+        view.forward(req, resp);
+    }
+
+    @Override
+    public void init() throws ServletException {
+        System.out.println("init()");
+        super.init();
+    }
+
+    @Override
+    public void init(ServletConfig config) throws ServletException {
+        System.out.println("init(ServletConfig)");
+        super.init(config);
+    }
+
+    @Override
+    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.println("service");
+        super.service(req, resp);
+    }
+
+    @Override
+    public void destroy() {
+        System.out.println("destroy");
+        super.destroy();
     }
 }
