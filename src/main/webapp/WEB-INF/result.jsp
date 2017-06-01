@@ -1,5 +1,7 @@
 <%@ page import="java.util.Iterator" %>
-<%@ page import="java.util.List" %><%--
+<%@ page import="java.util.List" %>
+<%@ page import="com.draper.Sky" %>
+<%--
   Created by IntelliJ IDEA.
   User: Draper_HXY
   Date: 2017/6/1
@@ -19,7 +21,10 @@
     while (iterator.hasNext()) {
         response.getWriter().print(iterator.next() + "<br>");
     }
-    response.getWriter().print(request.getAttribute("email"));
+    response.getWriter().print(request.getAttribute("email") + "<br>");
+    Sky sky = (Sky) config.getServletContext().getAttribute("sky");
+    response.getWriter().println(sky.getColor());
+    System.out.println(sky.getColor());
 %>
 
 </body>

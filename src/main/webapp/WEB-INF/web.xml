@@ -7,7 +7,7 @@
 
     <servlet>
         <servlet-name>Form</servlet-name>
-        <servlet-class>Home</servlet-class>
+        <servlet-class>com.draper.Home</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -19,5 +19,17 @@
         <param-name>email</param-name>
         <param-value>Draper_HXY@163.com</param-value>
     </context-param>
+
+    <context-param>
+        <param-name>Color</param-name>
+        <param-value>blue</param-value>
+    </context-param>
+
+    <listener>
+        <listener-class>
+            com.draper.MyServletContextListener
+        </listener-class>
+    </listener>
+
 
 </web-app>
