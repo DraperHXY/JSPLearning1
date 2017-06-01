@@ -19,6 +19,7 @@
     while (iterator.hasNext()) {
         response.getWriter().print(iterator.next() + "<br>");
     }
+    response.getWriter().print(request.getAttribute("email"));
 %>
 
 </body>

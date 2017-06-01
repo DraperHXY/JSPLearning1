@@ -1,5 +1,4 @@
 import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -20,22 +19,19 @@ public class Home extends HttpServlet {
         LanguageParse languageParse = new LanguageParse();
         List list = languageParse.getDetail(language);
         req.setAttribute("languageList", list);
+        req.setAttribute("email",getServletConfig().getInitParameter("email"));
 
         //请求分派器用来分派
         RequestDispatcher view = req.getRequestDispatcher("WEB-INF/result.jsp");
         view.forward(req, resp);
     }
 
+    //覆盖只用覆盖无参版本就可以
+    //若想获取 ServletConfig 只需调用 getServletConfig() 既可
     @Override
     public void init() throws ServletException {
         System.out.println("init()");
         super.init();
-    }
-
-    @Override
-    public void init(ServletConfig config) throws ServletException {
-        System.out.println("init(ServletConfig)");
-        super.init(config);
     }
 
     @Override
