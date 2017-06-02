@@ -32,6 +32,10 @@
         </listener-class>
     </listener>
 
+    <error-page>
+        <error-code>404</error-code>
+        <location>/404.jsp</location>
+    </error-page>
 
 =======
  "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
