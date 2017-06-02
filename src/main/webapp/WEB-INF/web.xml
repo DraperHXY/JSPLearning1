@@ -1,5 +1,4 @@
 <!DOCTYPE web-app PUBLIC
-<<<<<<< HEAD
         "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
         "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
@@ -8,12 +7,32 @@
 
     <servlet>
         <servlet-name>Form</servlet-name>
-        <servlet-class>com.draper.Home</servlet-class>
+        <servlet-class>com.draper.HomePage</servlet-class>
     </servlet>
 
     <servlet-mapping>
         <servlet-name>Form</servlet-name>
         <url-pattern>/Hello.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>cookie</servlet-name>
+        <servlet-class>com.draper.CookiePage</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>cookie</servlet-name>
+        <url-pattern>/coookies.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>getCookie</servlet-name>
+        <jsp-file>/WEB-INF/getCookie.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>getCookie</servlet-name>
+        <url-pattern>/yahoo.cookie.do</url-pattern>
     </servlet-mapping>
 
     <context-param>
@@ -37,21 +56,8 @@
         <location>/404.jsp</location>
     </error-page>
 
-=======
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+    <session-config>
+        <session-timeout>15</session-timeout>
+    </session-config>
 
-<web-app>
-  <display-name>Archetype Created Web Application</display-name>
-
-  <servlet>
-    <servlet-name>Form</servlet-name>
-    <servlet-class>Home</servlet-class>
-  </servlet>
-
-  <servlet-mapping>
-    <servlet-name>Form</servlet-name>
-    <url-pattern>/Hello.do</url-pattern>
-  </servlet-mapping>
->>>>>>> 210ef40... 一个简单的 JSP + 表单
 </web-app>

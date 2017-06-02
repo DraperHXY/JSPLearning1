@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-public class Home extends HttpServlet {
+public class HomePage extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -22,7 +22,6 @@ public class Home extends HttpServlet {
         List list = languageParse.getDetail(language);
         req.setAttribute("languageList", list);
         req.setAttribute("email", getServletContext().getInitParameter("email"));
-
         //请求分派器用来分派
         RequestDispatcher view = req.getRequestDispatcher("WEB-INF/result.jsp");
         view.forward(req, resp);
