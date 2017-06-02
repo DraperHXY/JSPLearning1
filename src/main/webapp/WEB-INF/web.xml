@@ -35,6 +35,16 @@
         <url-pattern>/yahoo.cookie.do</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>Jsp</servlet-name>
+        <jsp-file>/Jsp.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Jsp</servlet-name>
+        <url-pattern>/Jsp</url-pattern>
+    </servlet-mapping>
+
     <context-param>
         <param-name>email</param-name>
         <param-value>Draper_HXY@163.com</param-value>

@@ -1,6 +1,7 @@
 <%@ page import="java.util.Iterator" %>
 <%@ page import="java.util.List" %>
 <%@ page import="com.draper.Sky" %>
+<%@ page import="java.awt.geom.RectangularShape" %>
 <%--
   Created by IntelliJ IDEA.
   User: Draper_HXY
@@ -25,6 +26,7 @@
     Sky sky = (Sky) config.getServletContext().getAttribute("sky");
     response.getWriter().println(sky.getColor());
     System.out.println(sky.getColor());
+    ServletConfig servletConfig = request.getSession().getServletContext().getServlet("").getServletConfig();
 %>
 
 </body>
