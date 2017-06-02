@@ -1,4 +1,5 @@
 <!DOCTYPE web-app PUBLIC
+<<<<<<< HEAD
         "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
         "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
@@ -32,4 +33,21 @@
     </listener>
 
 
+=======
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+
+  <servlet>
+    <servlet-name>Form</servlet-name>
+    <servlet-class>Home</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>Form</servlet-name>
+    <url-pattern>/Hello.do</url-pattern>
+  </servlet-mapping>
+>>>>>>> 210ef40... 一个简单的 JSP + 表单
 </web-app>
